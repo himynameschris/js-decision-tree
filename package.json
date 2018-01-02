@@ -11,6 +11,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-inline": "^0.3.6",
+    "grunt-replace": "^1.0.1",
     "grunt-serve": "^0.1.6"
   },
   "dependencies": {

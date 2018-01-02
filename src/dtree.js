@@ -1,5 +1,3 @@
-// our initial variables
-
 // a hash-map tree to reference nodes by their ID
 var tree = {};
 var dtree_level = 0;
@@ -7,8 +5,6 @@ var rendered_leaves = [];
 
 // build our tree hash-map
 var buildTree = function(leaf) {
-    //console.log('build tree adding leaf: ', leaf);
-    //if(leaf.end) return;
     leaf.leafID = leaf.leafID.replace(/\./g,'d');
     leaf.parent = leaf.parent.replace(/\./g,'d');
     tree[leaf.leafID] = leaf;
@@ -24,7 +20,6 @@ var growLeaf = function(leaf) {
     
     // assemble our template with the leaf info
     var leafTemplate = '<div id="' + leaf.leafID + '" class="leaf">' +
-                        '<p>' +
                         // when title link is clicked, remove all nodes after
                         '<h3><a href="#" onclick="handleClick(\'' + leaf.leafID + '\')">' + leaf.title + '</a></h3>' +
                         '<div>' + leaf.text + '</div>' + 
@@ -43,7 +38,7 @@ var growLeaf = function(leaf) {
         }
     }    
 
-    leafTemplate += '</ul></p></div>';
+    leafTemplate += '</ul></div>';
 
     $('#root').prepend(leafTemplate);
     rendered_leaves.push(leaf.leafID);
@@ -81,7 +76,6 @@ var witherLeaf = function(nbr, cb) {
 
 // handle a click on a link within a leaf
 var handleClick = function(leafID, isChoice) {
-    //console.log('handling click from leafID:',leafID);
     
     // calculate the level based on the leafID
     var level = ('' + leafID).split('d').length;
@@ -105,19 +99,17 @@ var handleClick = function(leafID, isChoice) {
 
 $(document).ready(function() {
     
-    Papa.parse('http://localhost:9000/data/data.csv', 
+    Papa.parse(dataurl, 
         {
             download:true
             ,header:true
             ,complete:function(results) {
-                console.log('papaparse results: ', results);
                 var leaves = results.data;
 
-                leaves.map(leaf => buildTree(leaf));
-                //buildTree(leaves);
+                leaves.map(function(leaf) {
+                    buildTree(leaf);
+                })
                 growLeaf(tree['1']);
-                console.log('tree: ', tree);
-                console.log('rendered leaves: ', rendered_leaves);
             }
         });
 

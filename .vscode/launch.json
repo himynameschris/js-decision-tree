@@ -9,15 +9,15 @@
             "type": "chrome",
             "request": "launch",
             "reAttach": true,
-            "file": "${workspaceFolder}/dist/index.html"
+            "file": "${workspaceFolder}/dist/dtree.html"
         },
         {
             "name": "Launch localhost",
             "type": "chrome",
             "request": "launch",
             "reAttach": true,
-            "url": "http://localhost:9000/src/index.html",
-            "webRoot": "${workspaceFolder}/src"
+            "url": "http://localhost:9000/dist/dtree.html",
+            "webRoot": "${workspaceFolder}/dist"
         },
         {
             "name": "Attach",

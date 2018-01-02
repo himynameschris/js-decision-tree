@@ -5,7 +5,9 @@ module.exports = function(grunt) {
         inline: {
             dist: {
                 options: {
-                    tag: ''
+                    tag: '',
+                    cssmin: true,
+                    uglify: true
                 },
               src: 'src/index.html',
               dest: 'dist/index.html'
@@ -16,6 +18,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-inline');
     grunt.loadNpmTasks('grunt-serve');  
     
+    grunt.registerTask('default', ['b']);
     grunt.registerTask('b', ['inline']);
     grunt.registerTask('s', ['serve']);
   

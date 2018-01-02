@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "reAttach": true,
-            "file": "${workspaceFolder}/index.html"
+            "file": "${workspaceFolder}/dist/index.html"
         },
         {
             "name": "Launch localhost",

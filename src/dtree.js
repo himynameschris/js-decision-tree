@@ -116,7 +116,7 @@ $(document).ready(function() {
     }
 
     // parse our data
-    Papa.parse(dataurl, 
+    Papa.parse('@@dataurl', 
         {
             download:true
             ,header:true

@@ -1,0 +1,10 @@
+{
+    "target" : {
+        "dev" : "dist/"
+    },
+
+    "data" : {
+        "dev" : "../data/sample_data.csv"
+    }    
+    
+}

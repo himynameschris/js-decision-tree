@@ -10,11 +10,13 @@ module.exports = function(grunt) {
               src: 'src/index.html',
               dest: 'dist/index.html'
             }
-          }
+          }        
     });
 
-    grunt.loadNpmTasks('grunt-inline');  
+    grunt.loadNpmTasks('grunt-inline');
+    grunt.loadNpmTasks('grunt-serve');  
     
-    grunt.registerTask('default', ['inline']);
+    grunt.registerTask('b', ['inline']);
+    grunt.registerTask('s', ['serve']);
   
   };

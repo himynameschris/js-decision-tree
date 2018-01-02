@@ -10,9 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-inline": "^0.3.6"
+    "grunt-inline": "^0.3.6",
+    "grunt-serve": "^0.1.6"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "papaparse": "^4.3.6"
   }
 }

@@ -14,7 +14,7 @@
     "grunt-serve": "^0.1.6"
   },
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^1.12.4",
     "papaparse": "^4.3.6"
   }
 }

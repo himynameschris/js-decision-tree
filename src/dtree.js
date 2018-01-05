@@ -75,7 +75,7 @@ var witherLeaf = function(nbr, cb) {
             $(remove_id).remove();
             nbr--;
             if(nbr > 0) {
-                wither();
+                wither(nbr);
             } else if(cb) {
                 cb();
             }
